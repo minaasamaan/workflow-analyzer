@@ -1,0 +1,34 @@
+EMPLOYEES
+start
+  employeeId : 0000
+  fullName   : John Doe
+  email      : john.doe@company.local
+end
+start
+  employeeId : 0199
+  fullName   : Liam Mills
+  email      : liam.mills@company.local
+end
+start
+  employeeIds : invalid tokens start here
+  fullNames   : Jean Dupont
+  email   s   : jean.dupont@company.local
+  unknown
+end
+  employeeId  missing start
+  fullName    missing colon, invalid token
+enddd
+end
+ed
+
+
+start
+start
+  email      : joshua.knox@company.local
+  last invalid line
+end
+start
+  employeeId : 0198
+  fullName   : Helga Doster
+  email      : h.doster@company.local
+end

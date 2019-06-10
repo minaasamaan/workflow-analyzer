@@ -1,0 +1,13 @@
+WORKFLOWS
+start
+	id: 1
+	name: name1
+	author: email1@something.com
+	version: 1
+end
+start
+	id: 2
+	name: name2
+	author: email2@something.com
+	version: 2
+end

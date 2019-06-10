@@ -1,0 +1,55 @@
+:toc:
+:icons: font
+:source-highlighter: prettify
+
+== General architectural assumptions
+
+- Given the requirement, _"That system has a rough-and-ready export job that writes out the internal state every night into some huge files using an arbitrary format"_
+- Based on this requirement, target was to build a scalable solution which will be able to process huge files that may not fit into memory.
+- Solution should have the following as major characteristics: scalability, fault-tolerance, reliability and feasibility.
+- Since it's hard to achieve everything from those characteristics altogether, some compromisation/trade-offs and cutting corners have been taken (see below).
+- Obviously the current problem melts nicely into "Data pipeline architectural style", so I've searched for suitable frameworks to get the job done.
+- I've chosen Spring Batch as a robust framework, keeping in mind the following pros/cons:
+** *Pros*
+    * It has a great capabilities for big-scale problems, such as chunks oriented processing, which means we don't need to have all data in memory.
+    * If bottlenecks arouse, Spring batch has various options for scaling/parallel processing.
+    * Providing the right building blocks to keep the code modularized and clean with high separation of concerns.
+** *Cons*
+    * It's relatively complex to adjust off-the-shelf components for the current use-cases.
+    * For merely an assignment tasks purposes, it might be a bit of over-engineering (still, it might also be a good choice to show experience, etc...).
+
+== System design assumptions
+
+- Input files will be provided somewhere in the project classpath, provided that such paths will be configured in the application.properties
+- For simplicity, in-memory-db is used. Still this can be easily changed.
+- Analyzer Service will report two types of inconsistencies in the input files:
+    * Syntactic problems: Given by `ParsingError` class. Indicates lines that mismatches with the file given structure (e.g. start, end, defined attributes, etc...)
+        If such inconsistencies happened inside record boundaries, record will not be processed, while if it happens before or after record boundaries, record will be processed normally & syntax problems will still be reported.
+    * Semantic problems: Given by `BusinessErrors` class. This means record had no syntax problems, but it maybe missing mandatory fields, or non existing entity relation.
+        Obviously, no record has semantic issues should be processed & saved to DB.
+- All given ids are considered natural-id(s), which means they are identifying the records uniquely among their type.
+- No duplicate natural-ids accepted. Also this extends to some logically unique fields, such as emails for employees.
+- Output will be directed to the console through displaying entities toString() outputs.
+
+== System design (dropped) assumptions
+
+Some assumptions have been dropped for the sake of simplicity/feasibility.
+
+- Providing output in REST APIs.
+- Having physical DB not necessary, as all-data-in-memory is verified with the team.
+- Parallel chunks processing & writes.
+- Posting code to Github (explicitly requested not to do it), docker, etc...
+- Integrating Spring batch Admin.
+
+== How to run
+
+- To build and see test results, typically you may:
+`./mvnw -s private-settings.xml clean package`
+
+NOTE: Of course, `-s private-settings.xml` is optional, and you may use it only if you need. Just keep in mind you will need to provide your own maven repository location inside the file if you will use it.
+
+- To run, you may:
+ `./mvnw -s private-settings.xml spring-boot:run`
+
+== How to run against your data
+Simply put your data somewhere in the classpath, and then configure them properly in `application.properties`. After that repeat steps from "How to run" section.

@@ -1,0 +1,128 @@
+WORKFLOW INSTANCES
+start
+  id         : 1524667587190714616
+  workflowId : 1
+  assignee   : john.doe@company.local
+  step       : approved
+  status     : NEW
+end
+start
+  id         : 535828436669789118
+  workflowId : 2
+  assignee   : jean.dupont@company.local
+  step       : ready for archiving
+  status     : RUNNING
+end
+start
+  id         : 8563780828914013865
+  workflowId : 2
+  assignee   : jean.dupont@company.local
+         : supervisor approval
+  status     : DONE
+end
+start
+  id         : 3683228499925040330
+  workflowId : 4711
+  assignee   : f.consultant@example.org
+  step       : supervisor approval
+  status     : NEW
+end
+start
+  id         : 8109038857709595886
+  workflowId : 1
+  assignee   : erica.external@example.com
+  step       : supervisor approval
+  status     : RUNNING
+end
+start
+  id         : 4784917772368473437
+  workflowId : 1
+  assignee   : john.doe@company.local
+  step       : approved
+  status     : RUNNING
+end
+start
+  id         : 268212283749527254
+  workflowId : 1
+  assignee   : jean.dupont@company.local
+  step       : waiting for feedback
+  status     : DONE
+end
+start
+  id         : 2737875753375411154
+  workflowId : 2
+  assignee   : h.doster@company.local
+  step       : initial
+  status     : RUNNING
+end
+start
+  id         : 5709038654199052856
+  workflowId : 2
+  assignee   : f.consultant@example.org
+end
+  step       : initial
+  status     : RUNNING
+end
+start
+  id         : 1354720373442029191
+  workflowId : 3
+  assignee   : conny.contractor@example.com
+  step       : waiting for feedback
+  status     : DONE
+end
+start
+  id         : 7030155089190540600
+  workflowId : 3
+  assignee   : conny.contractor@example.com
+  step       : supervisor approval
+  status     : NEW
+end
+start
+  id         : 7867291045058546588
+  workflowId : 1
+  assignee   : john.doe@company.local
+  step       : approved
+  status     : RUNNING
+end
+start
+  id         : 5664173453017357474
+  workflowId : 1
+  assignee   : joshua.knox@company.local
+  step       : approved
+  status     : NEW
+end
+start
+  id         : 3675438571717748310
+  workflowId : 2
+  assignee   : conny.contractor@example.com
+  step       : legal approval
+  status     : PAUSED
+end
+start
+  id         : 5354061769058793437
+  workflowId : 2
+  assignee   : erica.external@example.com
+  step       : supervisor approval
+  status     : NEW
+end
+start
+  id         : 1144354076396245253
+  workflowId : 3
+  assignee   : conny.contractor@example.com
+  step       : legal approval
+  status     : PAUSED
+end
+start
+  id         : 8188195007108246993
+  workflowId : 3
+  assignee   : f.consultant@example.org
+  step       : approved
+  status     : RUNNING
+end
+start
+  id         : 5214148519671346594
+  workflowId : 3
+  assignee   : jean.dupont@company.local
+  step       : approved
+  status     : PAUSED
+end

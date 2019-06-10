@@ -1,0 +1,19 @@
+WORKFLOWS
+start
+	id: 1
+	name: Purchase Request Approval Sub-Workflow
+	author: john.doe@company.local
+	version: 14
+end
+start
+	id: 2
+	name: Invoice Approval Sub-Workflow
+	author: john.doe@company.local
+	version: 6
+end
+start
+	id: 3
+	name: Procurement Workflow
+	author: john.doe@company.local
+	version: 15
+end

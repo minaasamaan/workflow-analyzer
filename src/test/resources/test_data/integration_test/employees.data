@@ -1,0 +1,31 @@
+EMPLOYEES
+start
+  employeeId : 0009
+  fullName   : John Doe
+  email      : john.doe@company.local
+end
+start
+  employeeId : 0199
+  fullName   : Liam Mills
+  email      : liam.mills@company.local
+end
+start
+  employeeId : 0003
+  fullName   : Jean Dupont
+  email      : jean.dupont@company.local
+end
+start
+  employeeId : 0112
+  fullName   : Sally Housecoat
+  email      : sally.housecoat@company.local
+end
+start
+  employeeId : 0200
+  fullName   : Joshua Knox
+  email      : joshua.knox@company.local
+end
+start
+  employeeId : 0198
+  fullName   : Helga Doster
+  email      : h.doster@company.local
+end

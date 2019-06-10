@@ -1,0 +1,15 @@
+WORKFLOW INSTANCES
+start
+  id         : 111
+  workflowId : 1
+  assignee   : email1@something.com
+  step       : step 1
+  status     : RUNNING
+end
+start
+  id         : 112
+  workflowId : 2
+  assignee   : email2@something.com
+  step       : step 2
+  status     : PAUSED
+end
